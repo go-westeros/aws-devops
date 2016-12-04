@@ -1,9 +1,9 @@
 // Load the SDK and UUID
-import * as AWS from 'aws-sdk'
+import { S3 } from 'aws-sdk'
 import * as uuid from 'uuid'
 
 // Create an S3 client
-const s3 = new AWS.S3()
+const s3 = new S3()
 
 // Create a bucket and upload something into it
 const bucketName = `node-sdk-check-${uuid.v4()}`
