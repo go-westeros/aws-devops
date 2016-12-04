@@ -1,0 +1,28 @@
+{
+  "name": "aws-devops",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "check-access": "ts-node cli-access-check.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/go-westeros/aws-devops.git"
+  },
+  "author": "Trotyl Yu <trotyl@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/go-westeros/aws-devops/issues"
+  },
+  "homepage": "https://github.com/go-westeros/aws-devops#readme",
+  "dependencies": {
+    "@types/uuid": "^2.0.29",
+    "aws-sdk": "^2.7.10",
+    "ts-node": "^1.7.0",
+    "typescript": "^2.2.0-dev.20161204",
+    "uuid": "^3.0.1"
+  },
+  "devDependencies": {}
+}
