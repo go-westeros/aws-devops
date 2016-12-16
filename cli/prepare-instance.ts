@@ -1,5 +1,5 @@
 import { EC2, Config } from 'aws-sdk'
-import { InstanceResource } from '../core/instance-resource'
+import { InstanceResource } from '../core/resource'
 
 const instanceResource = new InstanceResource()
 

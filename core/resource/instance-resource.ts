@@ -1,5 +1,5 @@
 import { EC2 } from 'aws-sdk'
-import { ec2 } from '../util'
+import { ec2 } from '../../util'
 import { Resource } from './abstract-resource'
 
 type Instance = EC2.Types.Instance
