@@ -13,8 +13,10 @@ async function main() {
             Filters: [{
                 Name: 'tag:role',
                 Values: ['westeros-host']
-            }],
-            MaxResults: 1000
+            }, {
+                Name: 'instance-state-name',
+                Values: ['pending', 'running']
+            }]
         }).promise()
         
         let res = reservations.find(res => res.Instances.length > 0)
@@ -24,7 +26,8 @@ async function main() {
                 ImageId: 'ami-a1288ec2',
                 InstanceType: 't2.micro',
                 MinCount: 1,
-                MaxCount: 1
+                MaxCount: 1,
+                KeyName: 'main'
             }).promise()
         }
 
