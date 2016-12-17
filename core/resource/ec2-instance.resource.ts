@@ -19,7 +19,7 @@ function inStates(states: string[]) {
 
 const instanceConfig: InstanceConfig = {
     ImageId: 'ami-a1288ec2',
-    InstanceType: 't2.micro',
+    InstanceType: 't2.large',
     MinCount: 1,
     MaxCount: 1,
     KeyName: 'main'
