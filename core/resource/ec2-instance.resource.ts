@@ -1,6 +1,6 @@
 import { EC2 } from 'aws-sdk'
 import { ec2 } from '../../util'
-import { Resource } from './abstract-resource'
+import { Resource } from './base.resource'
 
 type Instance = EC2.Types.Instance
 type InstanceConfig = EC2.Types.RunInstancesRequest
@@ -25,18 +25,18 @@ const instanceConfig: InstanceConfig = {
     KeyName: 'main'
 }
 
-export class InstanceResource extends Resource<Instance> {
+export class EC2InstanceResource extends Resource<Instance> {
     async checkRunning(): Promise<Instance[]> {
         const { Reservations: reservations } = await ec2.describeInstances(inStates(['pending', 'running'])).promise()
         return reservations.reduce((instances, res) => [...instances, ...res.Instances], [] as Instance[])
     }
 
-    async checkRunable(): Promise<Instance[]> {
+    async checkRunnable(): Promise<Instance[]> {
         const { Reservations: reservations } = await ec2.describeInstances(inStates(['stopping', 'stopped'])).promise()
         return reservations.reduce((instances, res) => [...instances, ...res.Instances], [] as Instance[])
     }
 
-    async startRunable(): Promise<Instance[]> {
+    async startRunnable(): Promise<Instance[]> {
         throw new Error('Not implemented!')
     }
 

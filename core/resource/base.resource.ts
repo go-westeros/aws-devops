@@ -1,9 +1,9 @@
 export abstract class Resource<T> {
     abstract async checkRunning(): Promise<T[]>
 
-    abstract async checkRunable(): Promise<T[]>
+    abstract async checkRunnable(): Promise<T[]>
 
-    abstract async startRunable(): Promise<T[]>
+    abstract async startRunnable(): Promise<T[]>
 
     abstract async create(): Promise<T[]>
 
@@ -11,7 +11,7 @@ export abstract class Resource<T> {
         const runningEntities = await this.checkRunning()
         if (runningEntities.length !== 0) { return runningEntities }
 
-        // TODO Run runable Ts
+        // TODO Start runnable Entities
 
         const createdEntities = await this.create()
         if (createdEntities.length !== 0) { return createdEntities }

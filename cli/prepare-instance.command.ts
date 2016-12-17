@@ -1,7 +1,6 @@
-import { EC2, Config } from 'aws-sdk'
-import { InstanceResource } from '../core/resource'
+import { EC2InstanceResource } from '../core/resource'
 
-const instanceResource = new InstanceResource()
+const instanceResource = new EC2InstanceResource()
 
 async function main() {
     try {
